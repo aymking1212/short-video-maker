@@ -1,0 +1,12 @@
+docker run -d --name short-video-maker `
+  --restart unless-stopped `
+  -p 3123:3123 `
+  -e PEXELS_API_KEY=k0gTZUBomq82e3ImusCrPJv86ItD6m3E2GwcgqjfDvk4YYwPtKqKqSDn`
+  -e LOG_LEVEL=debug`
+  -v H:\JOBS\9NAT 1\VIDO:/app/data/videos`
+  gyoridavid/short-video-maker:latest-tiny
+
+
+
+
+docker run -d --name short-video-maker --restart unless-stopped -p 3123:3123 -e PEXELS_API_KEY=k0gTZUBomq82e3ImusCrPJv86ItD6m3E2GwcgqjfDvk4YYwPtKqKqSDn -e LOG_LEVEL=debug -v "H:\JOBS\9NAT 1\VIDO:/app/data/videos" gyoridavid/short-video-maker:latest-tiny
