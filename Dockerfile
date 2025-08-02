@@ -1,7 +1,10 @@
 FROM gyoridavid/short-video-maker:latest-tiny
 
-ENV PEXELS_API_KEY=k0gTZUBomq82e3ImusCrPJv86ItD6m3E2GwcgqjfDvk4YYwPtKqKqSDn
-ENV LOG_LEVEL=debug
+RUN npm install cors
+
+
+RUN sed -i "0,/const app =/s//const cors = require('cors');\nconst app =/" src/index.js \
+ && sed -i "/const app =.*/a app.use(cors());" src/index.js
 
 EXPOSE 3123
 
